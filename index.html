@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link href="./styles.css" rel="stylesheet">
+</head>
+<body>
+    <h1 class="page-title">Naruto Memory Game</h1>
+    <div class="overlay-text start visible">
+        Click to Start
+        <div class="overlay-text-small arcade">Arcade Mode</div>
+        <div class="overlay-text-small challenge">Challenge Mode</div>
+    </div>
+    <div id="game-over-text" class="overlay-text">
+        GAME OVER!
+        <span class="overlay-text-small">Click to Restart</span>
+    </div>
+    <div id="victory-text" class="overlay-text">
+        VICTORY!!!
+        <div class="score">
+            <div class="overlay-text-medium"><u>Your Score</u></div>
+            <div class="overlay-text-medium actual-score">Flips:<span class="final_score_flip"></span> Time:<span class="final_score_time"></span>s</div>
+            <div class="overlay-text-smaller check-score">Check for High Scores</div>
+        </div>
+        <span class="overlay-text-small click">Click here to Restart</span>
+    </div>
+    <div id="high-score" class="overlay-text">
+        <h5>HIGH SCORES</h5>
+        <div class="overlay-text-small type"></div>
+        <ol class="high-scores-display"></ol>
+        <span class="overlay-text-small back">Go back</span>
+    </div>
+    <div class="game-cards-container">
+        <div class="game-info-container">
+            <div>Flips: <span id="flips">0</span></div>
+            <div>Time: <span id="time-remaining">__ </span><span>s</span></div>
+        </div>
+
+        <div class="card">
+            <div class="card-face card-back">
+                <img class="card-img" src="./images/background_pic.png" alt="background">
+            </div>
+            <div class="card-face card-front">
+                <img class="card-value" src="./images/gaara.svg" alt="pic">
+            </div>
+        </div>
+        <!------>
+
+        <div class="card">
+            <div class="card-face card-back">
+                <img class="card-img" src="./images/background_pic.png" alt="background">
+            </div>
+            <div class="card-face card-front">
+                <img class="card-value" src="./images/gaara.svg" alt="pic">
+            </div>
+        </div>
+        <!------>
+
+        <div class="card">
+            <div class="card-face card-back">
+                <img class="card-img" src="./images/background_pic.png" alt="background">
+            </div>  
+            <div class="card-face card-front">
+                <img class="card-value" src="./images/kakashi.svg" alt="pic">
+            </div>
+        </div>
+        <!------>
+
+        <div class="card">
+            <div class="card-face card-back">
+                <img class="card-img" src="./images/background_pic.png" alt="background">
+            </div>
+            <div class="card-face card-front">
+                <img class="card-value" src="./images/kakashi.svg" alt="pic">
+            </div>
+        </div>
+        <!------>
+
+        <div class="card">
+            <div class="card-face card-back">
+                <img class="card-img" src="./images/background_pic.png" alt="background">
+            </div>
+            <div class="card-face card-front">
+                <img class="card-value" src="./images/sasuke.svg" alt="pic">
+            </div>
+        </div>
+        <!------>
+
+        <div class="card">
+            <div class="card-face card-back">
+                <img class="card-img" src="./images/background_pic.png" alt="background">
+            </div>
+            <div class="card-face card-front">
+                <img class="card-value" src="./images/sasuke.svg" alt="pic">
+            </div>
+        </div>
+        <!------>
+
+        <div class="card">
+            <div class="card-face card-back">
+                <img class="card-img" src="./images/background_pic.png" alt="background">
+            </div>
+            <div class="card-face card-front">
+                <img class="card-value" src="./images/naruto.svg" alt="pic">
+            </div>
+        </div>
+        <!------>
+
+        <div class="card">
+            <div class="card-face card-back">
+                <img class="card-img" src="./images/background_pic.png" alt="background">
+            </div>
+            <div class="card-face card-front">
+                <img class="card-value" src="./images/naruto.svg" alt="pic">
+            </div>
+        </div>
+        <!------>
+
+        <div class="card">
+            <div class="card-face card-back">
+                <img class="card-img" src="./images/background_pic.png" alt="background">
+            </div>
+            <div class="card-face card-front">
+                <img class="card-value" src="./images/nagato.svg" alt="pic">
+            </div>
+        </div>
+        <!------>
+
+        <div class="card">
+            <div class="card-face card-back">
+                <img class="card-img" src="./images/background_pic.png" alt="background">
+            </div>
+            <div class="card-face card-front">
+                <img class="card-value" src="./images/nagato.svg" alt="pic">
+            </div>
+        </div>
+        <!------>
+
+        <div class="card">
+            <div class="card-face card-back">
+                <img class="card-img" src="./images/background_pic.png" alt="background">
+            </div>
+            <div class="card-face card-front">
+                <img class="card-value" src="./images/jiraiya.svg" alt="pic">
+            </div>
+        </div>
+        <!------>
+
+        <div class="card">
+            <div class="card-face card-back">
+                <img class="card-img" src="./images/background_pic.png" alt="background">
+            </div>
+            <div class="card-face card-front">
+                <img class="card-value" src="./images/jiraiya.svg" alt="pic">
+            </div>
+        </div>
+        <!------>
+
+        <div class="card">
+            <div class="card-face card-back">
+                <img class="card-img" src="./images/background_pic.png" alt="background">
+            </div>
+            <div class="card-face card-front">
+                <img class="card-value" src="./images/obito.svg" alt="pic">
+            </div>
+        </div>
+        <!------>
+
+        <div class="card">
+            <div class="card-face card-back">
+                <img class="card-img" src="./images/background_pic.png" alt="background">
+            </div> 
+            <div class="card-face card-front">
+                <img class="card-value" src="./images/obito.svg" alt="pic">
+            </div>
+        </div>
+        <!------>
+
+        <div class="card">
+            <div class="card-face card-back">
+                <img class="card-img" src="./images/background_pic.png" alt="background">
+            </div>
+            <div class="card-face card-front">
+                <img class="card-value" src="./images/itachi.svg" alt="pic">
+            </div>
+        </div>
+        <!------>
+
+        <div class="card">
+            <div class="card-face card-back">
+                <img class="card-img" src="./images/background_pic.png" alt="background">
+            </div>
+            <div class="card-face card-front">
+                <img class="card-value" src="./images/itachi.svg" alt="pic">
+            </div>
+        </div>
+        <!------>
+        
+
+        <div class="card">
+            <div class="card-face card-back">
+                <img class="card-img" src="./images/background_pic.png" alt="background">
+            </div>
+            <div class="card-face card-front">
+                <img class="card-value" src="./images/shikamaru.svg" alt="pic">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-face card-back">
+                <img class="card-img" src="./images/background_pic.png" alt="background">
+            </div>
+            <div class="card-face card-front">
+                <img class="card-value" src="./images/shikamaru.svg" alt="pic">
+            </div>
+        </div>
+
+    
+
+        <div class="card">
+            <div class="card-face card-back">
+                <img class="card-img" src="./images/background_pic.png" alt="background">
+            </div>
+            <div class="card-face card-front">
+                <img class="card-value" src="./images/minato.svg" alt="pic">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-face card-back">
+                <img class="card-img" src="./images/background_pic.png" alt="background">
+            </div>
+            <div class="card-face card-front">
+                <img class="card-value" src="./images/minato.svg" alt="pic">
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-face card-back">
+                <img class="card-img" src="./images/background_pic.png" alt="background">
+            </div>
+            <div class="card-face card-front">
+                <img class="card-value" src="./images/madara.svg" alt="pic">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-face card-back">
+                <img class="card-img" src="./images/background_pic.png" alt="background">
+            </div>
+            <div class="card-face card-front">
+                <img class="card-value" src="./images/madara.svg" alt="pic">
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-face card-back">
+                <img class="card-img" src="./images/background_pic.png" alt="background">
+            </div>
+            <div class="card-face card-front">
+                <img class="card-value" src="./images/hashirama.svg" alt="pic">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-face card-back">
+                <img class="card-img" src="./images/background_pic.png" alt="background">
+            </div>
+            <div class="card-face card-front">
+                <img class="card-value" src="./images/hashirama.svg" alt="pic">
+            </div>
+        </div>
+
+
+
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>
