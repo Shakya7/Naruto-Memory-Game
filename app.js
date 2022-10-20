@@ -1,3 +1,16 @@
+let warningMessage=document.querySelector(".warning");
+
+function messageShowCondition(){
+    if(window.innerWidth<1300){
+        warningMessage.classList.remove("hidden");
+    }
+    else    
+        warningMessage.classList.add("hidden");
+}
+
+addEventListener("load",()=>messageShowCondition());
+addEventListener("resize",()=>messageShowCondition());
+
 let victoryDiv=document.getElementById("victory-text");
 let scoreDiv=document.querySelector(".score");
 let scoreFlip=document.querySelector(".final_score_flip");
@@ -9,6 +22,8 @@ let goBack=document.querySelector(".overlay-text-small.back");
 let highScoreDisplay=document.querySelector(".high-scores-display");
 
 let checkScore=document.querySelector(".overlay-text-smaller.check-score");
+
+
 
 goBack.addEventListener("click",()=>{
     highScoreDiv.classList.remove("visible");
