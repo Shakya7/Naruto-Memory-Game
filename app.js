@@ -189,13 +189,13 @@ class NarutoGame {
     }
 
     startGameChallenge(obj) {
+        this.audioController.startChallengeMusic();
         this.totalClicks = 0;
         this.timeRemaining = this.totalTime;
         this.cardToCheck = null;
         this.matchedCards = [];
         this.busy = true;
         setTimeout(() => {
-            this.audioController.startChallengeMusic();
             this.shuffleCards(this.cardsArray);
             this.countdown = this.startCountdown(obj);
             this.busy = false;
@@ -205,12 +205,12 @@ class NarutoGame {
         this.ticker.innerText = this.totalClicks;
     }
     startGameArcade(obj){
+        this.audioController.startMusic();
         this.totalClicks = 0;
         this.cardToCheck = null;
         this.matchedCards = [];
         this.busy = true;
         setTimeout(() => {
-            this.audioController.startMusic();
             this.shuffleCards(this.cardsArray);
             this.countdown = this.startStopwatch();
             this.busy = false;
